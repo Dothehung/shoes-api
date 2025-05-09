@@ -10,18 +10,18 @@ app.use(cors());
 // Phục vụ file tĩnh từ thư mục public
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Kết nối với MySQL Workbench
+// Kết nối với MySQL dùng biến môi trường
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '123123123',
-    database: 'shoes_db'
+    host: process.env.MYSQLHOST,
+    user: process.env.MYSQLUSER,
+    password: process.env.MYSQLPASSWORD,
+    database: process.env.MYSQLDATABASE,
+    port: process.env.MYSQLPORT
 });
 
 db.connect(err => {
     if (err) throw err;
     console.log('✅ Đã kết nối với MySQL Workbench!');
-
     // Tạo bảng cart nếu chưa có
     const createCartTable = `
         CREATE TABLE IF NOT EXISTS cart (
