@@ -11,16 +11,24 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Kết nối với MySQL dùng biến môi trường
-console.log('Connecting to MySQL with:', {
+const db = mysql.createConnection({
     host: process.env.MYSQLHOST,
     user: process.env.MYSQLUSER,
+    password: process.env.MYSQLPASSWORD,
     database: process.env.MYSQLDATABASE,
     port: process.env.MYSQLPORT
+});
+
+console.log("Connecting to MySQL with:", {
+  host: process.env.MYSQLHOST,
+  user: process.env.MYSQLUSER,
+  port: process.env.MYSQLPORT
 });
 
 db.connect(err => {
     if (err) throw err;
     console.log('✅ Đã kết nối với MySQL Workbench!');
+
     // Tạo bảng cart nếu chưa có
     const createCartTable = `
         CREATE TABLE IF NOT EXISTS cart (
@@ -50,7 +58,8 @@ db.connect(err => {
     });
 });
 
-// API: Đăng ký tài khoản
+// ====== CÁC API ======
+
 app.post('/register', (req, res) => {
     const { fullname, email, password } = req.body;
     if (!fullname || !email || !password) {
@@ -68,7 +77,6 @@ app.post('/register', (req, res) => {
     });
 });
 
-// API: Đăng nhập tài khoản
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
     if (!email || !password) {
@@ -89,7 +97,6 @@ app.post('/login', (req, res) => {
     });
 });
 
-// API: Lấy danh sách sản phẩm trong giỏ hàng
 app.get('/cart', (req, res) => {
     db.query('SELECT * FROM cart', (err, results) => {
         if (err) throw err;
@@ -97,7 +104,6 @@ app.get('/cart', (req, res) => {
     });
 });
 
-// API: Thêm sản phẩm vào giỏ hàng
 app.post('/cart', (req, res) => {
     const { product_name, price, quantity } = req.body;
     if (quantity <= 0) {
@@ -110,7 +116,6 @@ app.post('/cart', (req, res) => {
     });
 });
 
-// API: Cập nhật số lượng sản phẩm
 app.put('/cart/:id', (req, res) => {
     const { id } = req.params;
     const { quantity } = req.body;
@@ -128,7 +133,6 @@ app.put('/cart/:id', (req, res) => {
     }
 });
 
-// API: Xóa sản phẩm khỏi giỏ hàng
 app.delete('/cart/:id', (req, res) => {
     const { id } = req.params;
     db.query('DELETE FROM cart WHERE id = ?', [id], (err) => {
