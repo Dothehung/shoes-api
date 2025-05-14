@@ -161,8 +161,3 @@ app.get('/login', (req, res) => {
 app.get('/register', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/html/register.html'));
 });
-
-// 🔧 Sửa lại route hiển thị giao diện giỏ hàng (tránh trùng với API /cart)
-app.get('/cart-ui', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/html/index.html'));
-});
