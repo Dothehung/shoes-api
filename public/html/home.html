@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Converse</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-yellow-50 font-sans">
+  <!-- Header -->
+  <header class="bg-white p-4 shadow">
+    <h1 class="text-2xl font-bold">Converse</h1>
+    <p class="text-lg text-gray-600">Sản phẩm khuyến mãi</p>
+  </header>
+
+  <!-- Logout -->
+  <div class="flex justify-end px-4 mt-2">
+    <button onclick="logout()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Đăng xuất</button>
+  </div>
+
+  <!-- Main Content -->
+  <main class="p-4 grid grid-cols-2 gap-4">
+    <!-- Product Cards -->
+    <!-- Product 1 -->
+    <div class="bg-white rounded-lg shadow p-4 relative border-2 border-yellow-300">
+      <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">-11%</span>
+      <button class="absolute top-2 right-2">
+        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
+      </button>
+      <img src="/images/product1.jpg" alt="Converse" class="w-full h-40 object-cover rounded-md mx-auto" />
+      <h3 class="text-sm font-semibold mt-2">Converse Chuck Taylor ...</h3>
+      <p class="text-lg font-bold text-red-500">1.900.000đ</p>
+      <p class="text-sm text-gray-500 line-through">2.190.000đ</p>
+      <div class="flex items-center mt-1">
+        <span class="text-yellow-400">★★★★★</span>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="bg-white rounded-lg shadow p-4 relative border-2 border-yellow-300">
+      <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">-13%</span>
+      <button class="absolute top-2 right-2">
+        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
+      </button>
+      <img src="/images/product1.jpg" alt="Converse" class="w-full h-40 object-cover rounded-md mx-auto" />
+      <h3 class="text-sm font-semibold mt-2">Chuck Taylor ALL STAR ...</h3>
+      <p class="text-lg font-bold text-red-500">1.309.000đ</p>
+      <p class="text-sm text-gray-500 line-through">1.500.000đ</p>
+      <div class="flex items-center mt-1">
+        <span class="text-blue-500 text-xs bg-blue-100 px-2 py-1 rounded mr-1">new</span>
+        <span class="text-pink-500 text-xs bg-pink-100 px-2 py-1 rounded">freeship</span>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="bg-white rounded-lg shadow p-4 relative border-2 border-yellow-300">
+      <button class="absolute top-2 right-2">
+        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
+      </button>
+      <img src="/images/product1.jpg" alt="Converse" class="w-full h-40 object-cover rounded-md mx-auto" />
+      <h3 class="text-sm font-semibold mt-2">Chuck Taylor ALL STAR ...</h3>
+      <p class="text-lg font-bold text-red-500">1.900.000đ</p>
+      <p class="text-sm text-gray-500 line-through">2.190.000đ</p>
+      <div class="flex items-center mt-1">
+        <span class="text-yellow-400">★★★★★</span>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="bg-white rounded-lg shadow p-4 relative border-2 border-yellow-300">
+      <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">-18%</span>
+      <button class="absolute top-2 right-2">
+        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
+      </button>
+      <img src="/images/product1.jpg" alt="Converse" class="w-full h-40 object-cover rounded-md mx-auto" />
+      <h3 class="text-sm font-semibold mt-2">Chuck Taylor ALL STAR ...</h3>
+      <p class="text-lg font-bold text-red-500">1.309.000đ</p>
+      <p class="text-sm text-gray-500 line-through">1.500.000đ</p>
+    </div>
+  </main>
+
+  <!-- Footer Navigation -->
+  <footer class="fixed bottom-0 left-0 right-0 bg-yellow-400 text-white flex justify-around p-4 shadow-lg">
+    <a href="#" class="flex flex-col items-center">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+      </svg>
+      <span class="text-xs">Trang chủ</span>
+    </a>
+    <a href="#" class="flex flex-col items-center">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M3 3h18M3 9h18M3 15h18M3 21h18" />
+      </svg>
+      <span class="text-xs">Trang sản phẩm</span>
+    </a>
+    <a href="#" class="flex flex-col items-center">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+      </svg>
+      <span class="text-xs">Trang tin tức</span>
+    </a>
+    <a href="#" class="flex flex-col items-center">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+      </svg>
+      <span class="text-xs">Đăng ký</span>
+    </a>
+  </footer>
+
+  <!-- Giỏ hàng nổi -->
+  <div class="fixed top-4 right-4 z-50">
+    <a href="/html/cart.html" class="relative inline-block bg-orange-400 p-3 rounded-full hover:bg-orange-500 transition">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1 5h12l-1-5M10 21h0M14 21h0" />
+      </svg>
+      <span id="cartBadge" class="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full px-1.5">0</span>
+    </a>
+  </div>
+
+  <!-- Script -->
+  <script>
+    // Tự động chuyển hướng nếu chưa đăng nhập
+    if (localStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "/html/login.html";
+    }
+
+    // Gán số lượng giỏ hàng
+    const badge = document.getElementById("cartBadge");
+    const count = localStorage.getItem("cartCount") || "0";
+    badge.textContent = count;
+
+    // Chuyển đến chi tiết sản phẩm
+    document.querySelectorAll("main > div").forEach(productDiv => {
+      productDiv.style.cursor = "pointer";
+      productDiv.addEventListener("click", () => {
+        window.location.href = "/html/comment_product.html";
+      });
+    });
+
+    // Đăng xuất
+    function logout() {
+      localStorage.removeItem("loggedIn");
+      localStorage.removeItem("cartCount");
+      window.location.href = "/html/login.html";
+    }
+  </script>
+</body>
+</html>

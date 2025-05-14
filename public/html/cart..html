@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoes - Giỏ Hàng</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-white shadow-md py-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">SHOES</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="#" class="text-gray-600 hover:text-black">Trang chủ</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-black">Converse All</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-black">Classic</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-black">Accessories</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-black">Phụ trang</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-black">Tin tức</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-black">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <div class="bg-teal-100 py-10 text-center relative">
+    <img src="https://via.placeholder.com/150" alt="Shoes" class="absolute top-0 right-0 mt-4 mr-4">
+    <h2 class="text-4xl font-bold">Giỏ hàng</h2>
+    <p class="text-lg text-gray-600">Trang chủ / Giỏ hàng</p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container mx-auto py-10 flex space-x-8">
+    <!-- Product Section -->
+    <div class="w-2/3 bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold text-orange-600 mb-6">GIỎ HÀNG CỦA BẠN</h3>
+
+      <!-- Product 1 -->
+      <div class="flex flex-col items-center text-center border-b pb-6 mb-6">
+        <img src="/images/product1.jpg" alt="..." class="w-48 h-48 object-cover rounded shadow mb-4" />
+        <h4 class="text-lg font-semibold">Chuck Taylor All Star Classic - 127440</h4>
+        <p class="text-gray-600">Giá: 1,459,000₫</p>
+        <p class="text-gray-600">Phiên bản: 40</p>
+        <div class="flex items-center mt-2">
+          <label class="mr-2">Số lượng:</label>
+          <input type="number" id="quantity1" value="1" min="0" class="w-16 border rounded px-2 py-1">
+        </div>
+        <button onclick="addToCart(1)" class="bg-yellow-400 text-white px-4 py-2 rounded mt-4 hover:bg-yellow-500">
+          Thêm vào giỏ
+        </button>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="flex flex-col items-center text-center border-b pb-6 mb-6">
+        <img src="/images/product1.jpg" alt="..." class="w-48 h-48 object-cover rounded shadow mb-4" />
+        <h4 class="text-lg font-semibold">Chuck Taylor All Star Pro - 127450</h4>
+        <p class="text-gray-600">Giá: 1,799,000₫</p>
+        <p class="text-gray-600">Phiên bản: 41</p>
+        <div class="flex items-center mt-2">
+          <label class="mr-2">Số lượng:</label>
+          <input type="number" id="quantity2" value="1" min="0" class="w-16 border rounded px-2 py-1">
+        </div>
+        <button onclick="addToCart(2)" class="bg-yellow-400 text-white px-4 py-2 rounded mt-4 hover:bg-yellow-500">
+          Thêm vào giỏ
+        </button>
+      </div>
+    </div>
+
+    <!-- Cart Summary -->
+    <div class="w-1/3 bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold text-blue-800">THÔNG TIN ĐƠN HÀNG</h3>
+      <p class="text-gray-600 mt-2">Tổng tiền: <span id="totalPrice">0₫</span></p>
+      <p class="text-gray-600">Phí vận chuyển chỉ từ: 0₫</p>
+      <p class="text-gray-600">Bạn đủ điều kiện để được miễn phí vận chuyển</p>
+      <div id="cartItems" class="mt-4"></div>
+      <div class="mt-4">
+        <input type="text" placeholder="Nhập họ tên tại đây..." class="w-full border rounded px-2 py-1 mb-2">
+        <input type="text" placeholder="Nhập số điện thoại..." class="w-full border rounded px-2 py-1 mb-2">
+        <button class="bg-yellow-400 text-white w-full py-2 rounded mt-4 hover:bg-yellow-500">Thanh toán</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow-inner py-6 mt-10">
+    <div class="container mx-auto text-center">
+      <div class="flex justify-center space-x-4 mb-4">
+        <div class="text-orange-600">
+          <p>SHOES</p>
+          <p>FIGENZ cam kết mang đến sản phẩm tốt nhất</p>
+          <p>với mức giá tốt nhất trên thị trường</p>
+        </div>
+        <div>
+          <p>Liên hệ</p>
+          <p>Tư vấn từ 9h00 - 17h50</p>
+          <p>HN: 024 7300 6750</p>
+          <p>HCM: 028 7300 6750</p>
+          <p>Email: support@sapn.vn</p>
+        </div>
+        <div>
+          <p>Về chúng tôi</p>
+          <p>Giới thiệu</p>
+          <p>Chính sách đổi trả</p>
+          <p>Điêu khoản và điều kiện</p>
+        </div>
+        <div>
+          <p>Dan mua ngay</p>
+          <p>Chuck 2</p>
+          <p>Converse All</p>
+          <p>Socks</p>
+          <p>Jack Purcell</p>
+        </div>
+        <div>
+          <p>Liên hệ với chúng tôi</p>
+          <p>Lưu ý khi chọn hàng đổi trả</p>
+          <p>Liên hệ với chúng tôi tại đây</p>
+        </div>
+      </div>
+      <div class="flex justify-center space-x-4">
+        <a href="#"><img src="https://via.placeholder.com/24" alt="Facebook"></a>
+        <a href="#"><img src="https://via.placeholder.com/24" alt="Twitter"></a>
+        <a href="#"><img src="https://via.placeholder.com/24" alt="Instagram"></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Liên kết đến file script.js -->
+  <script src="/js/script.js"></script>
+  <a href="/html/comment_product.html" class="text-blue-500 underline block mb-4">← Quay lại trang sản phẩm</a>
+</body>
+</html>

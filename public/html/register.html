@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>SHOES - Đăng ký</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-yellow-400 to-yellow-500">
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-sm">
+        <h1 class="text-2xl font-bold text-center mb-2">SHOES</h1>
+        <p class="text-center text-sm text-gray-500 mb-6">Enter your details to create a new account</p>
+        <form id="registerForm" class="space-y-4">
+            <input type="text" id="firstname" placeholder="Enter your first name" required class="w-full border px-3 py-2 rounded" />
+            <input type="text" id="lastname" placeholder="Enter your last name" required class="w-full border px-3 py-2 rounded" />
+            <input type="email" id="email" placeholder="Enter your email" required class="w-full border px-3 py-2 rounded" />
+            <input type="password" id="password" placeholder="Enter your password" required class="w-full border px-3 py-2 rounded" />
+            <button type="submit" class="w-full bg-orange-400 hover:bg-orange-500 text-white py-2 rounded font-semibold">Sign</button>
+        </form>
+        <p class="text-sm text-center mt-4 text-gray-600">
+            <a href="/html/login.html" class="text-blue-600 hover:underline">Already have an account</a>
+        </p>
+    </div>
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const data = {
+                fullname: document.getElementById("firstname").value + ' ' + document.getElementById("lastname").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value
+            };
+
+            fetch("http://localhost:3000/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            })
+            .then(res => res.json())
+            .then(result => {
+                localStorage.setItem("loggedIn", "true");
+                window.location.href = "/html/home.html";
+
+            })
+            .catch(err => {
+                alert("Lỗi khi đăng ký: " + err.message);
+            });
+        });
+    </script>
+    <script>
+  // Sau khi đăng ký thành công
+  alert('Đăng ký thành công!');
+  window.location.href = 'home.html';
+</script>
+    
+</body>
+</html>
